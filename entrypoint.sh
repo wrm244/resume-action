@@ -14,7 +14,6 @@ git config --global user.email "$INPUT_USER_EMAIL"
 
 # install hexo env
 npm install hexo-cli -g
-npm install hexo-deployer-git --save
 
 # deployment
 if [ "$INPUT_COMMIT_MSG" = "none" ]
@@ -30,4 +29,4 @@ else
     hexo g -d -m "$INPUT_COMMIT_MSG"
 fi
 
-echo ::set-output name=notify::"Deploy complate."
+echo "Deploy complate."

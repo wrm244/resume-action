@@ -11,7 +11,7 @@ ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 # setup deploy git account
 git config --global user.name "$INPUT_USER_NAME"
 git config --global user.email "$INPUT_USER_EMAIL"
-
+staticryptpw="$INPUT_STPW"
 # install hexo env
 npm install hexo-cli -g
 npm install -g staticrypt
@@ -22,7 +22,7 @@ if [ "$INPUT_COMMIT_MSG" = "none" ]
 then
     hexo g
     cd ./public
-    staticrypt index.html -p 021212WhsWhs@@ -d ./
+    staticrypt index.html -p staticryptpw -d ./
     old_text='<p class="staticrypt-title">Protected Page</p>'
     new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
     sed -i "s|$old_text|$new_text|g" ./index.html
@@ -38,7 +38,7 @@ then
     old_text='Remember me'
     new_text='记住我'
     sed -i "s|$old_text|$new_text|g" ./index.html
-    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
+    staticrypt ./en/index.html -p staticryptpw -d ./en
     cd ..
     hexo deploy
 elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
@@ -47,7 +47,7 @@ then
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo g
     cd ./public
-    staticrypt index.html -p 021212WhsWhs@@ -d ./
+    staticrypt index.html -p staticryptpw -d ./
     old_text='<p class="staticrypt-title">Protected Page</p>'
     new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
     sed -i "s|$old_text|$new_text|g" ./index.html
@@ -63,14 +63,14 @@ then
     old_text='Remember me'
     new_text='记住我'
     sed -i "s|$old_text|$new_text|g" ./index.html
-    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
+    staticrypt ./en/index.html -p staticryptpw -d ./en
     cd ..
     hexo deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo g
     cd ./public
-    staticrypt index.html -p 021212WhsWhs@@ -d ./
+    staticrypt index.html -p staticryptpw -d ./
     old_text='<p class="staticrypt-title">Protected Page</p>'
     new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
     sed -i "s|$old_text|$new_text|g" ./index.html
@@ -86,7 +86,7 @@ else
     old_text='Remember me'
     new_text='记住我'
     sed -i "s|$old_text|$new_text|g" ./index.html
-    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
+    staticrypt ./en/index.html -p staticryptpw -d ./en
     cd ..
     hexo deploy -m "$INPUT_COMMIT_MSG"
 fi

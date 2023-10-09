@@ -24,7 +24,7 @@ install_hexo() {
 
 # 处理index.html
 process_index_html() {
-    staticrypt index.html -p "$INPUT_ST_PW" -d ./ --short --remember false
+    staticrypt index.html -p "$INPUT_ST_PW" -d ./ --short --remember 1
     old_text='<p class="staticrypt-title">Protected Page</p>'
     new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
     sed -i "s|$old_text|$new_text|g" ./index.html
@@ -40,6 +40,9 @@ process_index_html() {
     old_text='Bad password!'
     new_text='密码错误，请重新尝试！'
     sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='Remember me'
+    new_text='记住我'
+    sed -i "s|$old_text|$new_text|g" ./index.html
     old_text='Protected Page'
     new_text='河山的简历保护页面'
     sed -i "s|$old_text|$new_text|g" ./index.html
@@ -47,7 +50,7 @@ process_index_html() {
 
 # 处理en/index.html
 process_en_index_html() {
-    staticrypt ./en/index.html -p "$INPUT_ST_PW" -d ./en --short --remember false
+    staticrypt ./en/index.html -p "$INPUT_ST_PW" -d ./en --short --remember 1
     old_text='<p class="staticrypt-title">Protected Page</p>'
     new_text='<p class="staticrypt-title">Welcome to Heshan'\''s resume</p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html

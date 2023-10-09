@@ -40,6 +40,9 @@ process_index_html() {
     old_text='Remember me'
     new_text='记住我'
     sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='Bad password!'
+    new_text='密码错误，请重新尝试！'
+    sed -i "s|$old_text|$new_text|g" ./index.html
 }
 
 # 处理en/index.html

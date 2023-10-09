@@ -14,7 +14,7 @@ git config --global user.email "$INPUT_USER_EMAIL"
 
 # install hexo env
 npm install hexo-cli -g
-
+npm install -g staticrypt
 hexo g
 hexo clean
 # deployment
@@ -25,9 +25,15 @@ elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
 then
     # pull original publish repo
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
+    cd ./public
+    staticrypt index.html -p 021212WhsWhs@@
+    cd ..
     hexo g -d
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
+    cd ./public
+    staticrypt index.html -p 021212WhsWhs@@
+    cd ..
     hexo g -d -m "$INPUT_COMMIT_MSG"
 fi
 

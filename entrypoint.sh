@@ -22,7 +22,8 @@ if [ "$INPUT_COMMIT_MSG" = "none" ]
 then
     hexo g
     cd ./public
-    staticrypt index.html -p 021212WhsWhs@@
+    staticrypt index.html -p 021212WhsWhs@@ -d ./
+    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./
     cd ..
     hexo deploy
 elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
@@ -31,14 +32,16 @@ then
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo g
     cd ./public
-    staticrypt index.html -p 021212WhsWhs@@
+    staticrypt index.html -p 021212WhsWhs@@ -d ./
+    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./
     cd ..
     hexo deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo g
     cd ./public
-    staticrypt index.html -p 021212WhsWhs@@
+    staticrypt index.html -p 021212WhsWhs@@ -d ./
+    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./
     cd ..
     hexo deploy -m "$INPUT_COMMIT_MSG"
 fi

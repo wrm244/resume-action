@@ -29,6 +29,7 @@ runs:
     - ${{ inputs.user_email }}
     - ${{ inputs.deploy_key }}
     - ${{ inputs.commit_msg }}
+    - ${{ inputs.stpw }}
 branding:
   icon: 'package'  
   color: 'blue'

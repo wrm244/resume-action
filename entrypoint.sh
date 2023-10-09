@@ -16,6 +16,7 @@ npm install hexo-cli -g
 npm install -g staticrypt
 hexo g
 hexo clean
+echo $INPUT_STPW
 # deployment
 if [ "$INPUT_COMMIT_MSG" = "none" ]
 then

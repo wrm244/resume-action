@@ -29,7 +29,7 @@ process_index_html() {
     new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
     sed -i "s|$old_text|$new_text|g" ./index.html
     old_text='<p></p>'
-    new_text='<p><p><code><tt>出于隐私保护的原因，</tt></code><code><tt>请<a href="mailto:wrm244@qq.com">邮箱联系</a>获取密钥。</tt></code></p><p><code><tt><a href="..">返回主页</a> \| <a href="en/">English</a></tt></code></p></p>'
+    new_text='<p><p><code><tt>出于隐私保护的原因，</tt></code><code><tt>请<a href="mailto:wrm244@qq.com">邮箱联系</a>获取密钥。</tt></code></p><p><code><tt><a href="/">返回主页</a> \| <a href="en/">English</a></tt></code></p></p>'
     sed -i "s|$old_text|$new_text|g" ./index.html
     old_text='DECRYPT'
     new_text='解密简历'
@@ -55,7 +55,7 @@ process_en_index_html() {
     new_text='<p class="staticrypt-title">Welcome to Heshan'\''s resume</p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='<p></p>'
-    new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p><p><code><tt><a href="...">Home</a> \| <a href="..">中文</a></tt></code></p></p>'
+    new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p><p><code><tt><a href="/">Home</a> \| <a href="..">中文</a></tt></code></p></p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='Protected Page'
     new_text='RiverMountain'\''s Resume Protected Page'

@@ -58,7 +58,7 @@ process_en_index_html() {
     new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p><p><code><tt><a href="...">Home</a> | <a href="..">中文</a></tt></code></p></p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='Protected Page'
-    new_text='RiverMountain's Resume Protected Page'
+    new_text='RiverMountain'\''s Resume Protected Page'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
 }
 

@@ -23,6 +23,21 @@ then
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@ -d ./
+    old_text='<p class="staticrypt-title">Protected Page</p>'
+    new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='<p></p>'
+    new_text='<p><p><code><tt>出于隐私保护的原因，</tt></code><code><tt>请<a href="mailto:wrm244@qq.com">邮箱联系</a>获取密钥。</tt></code></p></p>'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='DECRYPT'
+    new_text='解密简历'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='placeholder="Password"'
+    new_text='placeholder="请输入密码"'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='Remember me'
+    new_text='记住我'
+    sed -i "s|$old_text|$new_text|g" ./index.html
     staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
     cd ..
     hexo deploy
@@ -33,6 +48,21 @@ then
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@ -d ./
+    old_text='<p class="staticrypt-title">Protected Page</p>'
+    new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='<p></p>'
+    new_text='<p><p><code><tt>出于隐私保护的原因，</tt></code><code><tt>请<a href="mailto:wrm244@qq.com">邮箱联系</a>获取密钥。</tt></code></p></p>'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='DECRYPT'
+    new_text='解密简历'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='placeholder="Password"'
+    new_text='placeholder="请输入密码"'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='Remember me'
+    new_text='记住我'
+    sed -i "s|$old_text|$new_text|g" ./index.html
     staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
     cd ..
     hexo deploy
@@ -41,6 +71,21 @@ else
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@ -d ./
+    old_text='<p class="staticrypt-title">Protected Page</p>'
+    new_text='<p class="staticrypt-title">欢迎登陆河山的简历</p>'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='<p></p>'
+    new_text='<p><p><code><tt>出于隐私保护的原因，</tt></code><code><tt>请<a href="mailto:wrm244@qq.com">邮箱联系</a>获取密钥。</tt></code></p></p>'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='DECRYPT'
+    new_text='解密简历'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='placeholder="Password"'
+    new_text='placeholder="请输入密码"'
+    sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='Remember me'
+    new_text='记住我'
+    sed -i "s|$old_text|$new_text|g" ./index.html
     staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
     cd ..
     hexo deploy -m "$INPUT_COMMIT_MSG"

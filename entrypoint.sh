@@ -43,6 +43,9 @@ process_index_html() {
     old_text='Bad password!'
     new_text='密码错误，请重新尝试！'
     sed -i "s|$old_text|$new_text|g" ./index.html
+    old_text='Protected Page'
+    new_text='河山的简历保护页面'
+    sed -i "s|$old_text|$new_text|g" ./index.html
 }
 
 # 处理en/index.html
@@ -53,6 +56,9 @@ process_en_index_html() {
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='<p></p>'
     new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p><p><code><tt><a href="..">中文</a></tt></code></p></p>'
+    sed -i "s|$old_text|$new_text|g" ./en/index.html
+    old_text='Protected Page'
+    new_text='RiverMountain's Resume Protected Page'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
 }
 

@@ -23,7 +23,7 @@ then
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@ -d ./
-    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./
+    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
     cd ..
     hexo deploy
 elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
@@ -33,7 +33,7 @@ then
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@ -d ./
-    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./
+    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
     cd ..
     hexo deploy
 else
@@ -41,7 +41,7 @@ else
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@ -d ./
-    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./
+    staticrypt ./en/index.html -p 021212WhsWhs@@ -d ./en
     cd ..
     hexo deploy -m "$INPUT_COMMIT_MSG"
 fi

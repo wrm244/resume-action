@@ -24,7 +24,7 @@ then
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@
     cd ..
-    hexo -d
+    hexo deploy
 elif [ "$INPUT_COMMIT_MSG" = "" ] || [ "$INPUT_COMMIT_MSG" = "default" ]
 then
     # pull original publish repo
@@ -33,14 +33,14 @@ then
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@
     cd ..
-    hexo -d
+    hexo deploy
 else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo g
     cd ./public
     staticrypt index.html -p 021212WhsWhs@@
     cd ..
-    hexo -d -m "$INPUT_COMMIT_MSG"
+    hexo deploy -m "$INPUT_COMMIT_MSG"
 fi
 
 echo "Deploy complate."

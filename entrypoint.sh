@@ -39,7 +39,7 @@ then
     sed -i "s|$old_text|$new_text|g" ./index.html 
     staticrypt ./en/index.html -p "$INPUT_ST_PW" -d ./en --short
     old_text='<p class="staticrypt-title">Protected Page</p>'
-    new_text='<p class="staticrypt-title">Welcome to Heshan's resume</p>'
+    new_text='<p class="staticrypt-title">Welcome to Heshan'\''s resume</p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='<p></p>'
     new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p></p>'
@@ -70,7 +70,7 @@ then
     sed -i "s|$old_text|$new_text|g" ./index.html 
     staticrypt ./en/index.html -p "$INPUT_ST_PW" -d ./en --short
     old_text='<p class="staticrypt-title">Protected Page</p>'
-    new_text='<p class="staticrypt-title">Welcome to Heshan's resume</p>'
+    new_text='<p class="staticrypt-title">Welcome to Heshan'\''s resume</p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='<p></p>'
     new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p></p>'
@@ -99,7 +99,7 @@ else
     sed -i "s|$old_text|$new_text|g" ./index.html
     staticrypt ./en/index.html -p "$INPUT_ST_PW" -d ./en --short
     old_text='<p class="staticrypt-title">Protected Page</p>'
-    new_text='<p class="staticrypt-title">Welcome to Heshan's resume</p>'
+    new_text='<p class="staticrypt-title">Welcome to Heshan'\''s resume</p>'
     sed -i "s|$old_text|$new_text|g" ./en/index.html
     old_text='<p></p>'
     new_text='<p><p><code><tt>For privacy reasons, </tt></code><code><tt>please contact <a href="mailto:wrm244@qq.com">email</a> to obtain the key.</tt></code></p></p>'
